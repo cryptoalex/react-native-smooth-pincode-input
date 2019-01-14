@@ -39,6 +39,12 @@ class SmoothPinCodeInput extends Component {
   ref = React.createRef();
   inputRef = React.createRef();
 
+  updateSelection = (code) => {
+      if (this.inputRef && this.inputRef.current && code && code.length > 0) {
+          this.inputRef.current.setNativeProps({ selection:{ start: code.length, end: code.length } });
+      }
+  };
+
   shake = () => {
     return this.ref.current.shake(650);
   }
