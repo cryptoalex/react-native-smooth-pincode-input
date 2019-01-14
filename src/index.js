@@ -170,10 +170,6 @@ class SmoothPinCodeInput extends Component {
           keyboardType={keyboardType}
           numberOfLines={1}
           maxLength={codeLength}
-          selection={{
-            start: value.length,
-            end: value.length,
-          }}
           style={{
             flex: 1,
             opacity: 0,
