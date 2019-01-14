@@ -40,9 +40,9 @@ class SmoothPinCodeInput extends Component {
   inputRef = React.createRef();
 
   updateSelection = (code) => {
-      if (this.inputRef && this.inputRef.current && code && code.length > 0) {
+      if (this.inputRef && code && code.length > 0) {
           console.log('updateSelection: setNativeProps');
-          this.inputRef.current.setNativeProps({ selection:{ start: code.length, end: code.length } });
+          this.inputRef.setNativeProps({ selection:{ start: code.length, end: code.length } });
       }
   };
 
