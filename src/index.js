@@ -37,7 +37,7 @@ class SmoothPinCodeInput extends Component {
     focused: false,
   }
   ref = React.createRef();
-  inputRef = React.createRef();
+  inputRef = null;
 
   updateSelection = (code) => {
       if (this.inputRef && code && code.length > 0) {
@@ -172,7 +172,7 @@ class SmoothPinCodeInput extends Component {
         <TextInput
           {...this.props}
           value={value}
-          ref={this.inputRef}
+          ref={(codeInput) => { this.inputRef = codeInput; }}
           onChangeText={this._inputCode}
           onKeyPress={this._keyPress}
           onFocus={() => this._onFocused(true)}
