@@ -45,6 +45,10 @@ class SmoothPinCodeInput extends Component {
       }
   };
 
+  handleSelectionChange = () => {
+      this.updateSelection(this.props.value)
+  };
+
   shake = () => {
     return this.ref.current.shake(650);
   }
@@ -176,6 +180,7 @@ class SmoothPinCodeInput extends Component {
           keyboardType={keyboardType}
           numberOfLines={1}
           maxLength={codeLength}
+          onSelectionChange={this.handleSelectionChange}
           style={{
             flex: 1,
             opacity: 0,
