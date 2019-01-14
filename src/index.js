@@ -41,6 +41,7 @@ class SmoothPinCodeInput extends Component {
 
   updateSelection = (code) => {
       if (this.inputRef && this.inputRef.current && code && code.length > 0) {
+          console.log('updateSelection: setNativeProps');
           this.inputRef.current.setNativeProps({ selection:{ start: code.length, end: code.length } });
       }
   };
@@ -54,11 +55,11 @@ class SmoothPinCodeInput extends Component {
   }
 
   focus = () => {
-    return this.inputRef.current.focus();
+      return this.inputRef.current.focus();
   };
 
   blur = () => {
-    return this.inputRef.current.blur();
+      return this.inputRef.current.blur();
   };
 
   _inputCode = (code) => {
@@ -91,6 +92,7 @@ class SmoothPinCodeInput extends Component {
   }
 
   _onFocused = (focused) => {
+    this.updateSelection(this.props.value);
     this.setState({ focused });
   }
 
