@@ -41,7 +41,8 @@ class SmoothPinCodeInput extends Component {
 
   updateSelection = (code) => {
       if (this.inputRef && code && code.length > 0) {
-          this.inputRef.setNativeProps({ selection:{ start: code.length, end: code.length } });
+          setTimeout(() =>
+              this.inputRef.setNativeProps({ selection:{ start: code.length, end: code.length } }), 500);
       }
   };
 
