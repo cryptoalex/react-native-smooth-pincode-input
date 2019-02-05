@@ -6,6 +6,7 @@ import {
   TextInput,
   StyleSheet,
   ViewPropTypes,
+  I18nManager,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
@@ -127,7 +128,7 @@ class SmoothPinCodeInput extends Component {
       ]}>
         <View style={{
           position: 'absolute', margin: 0, height: '100%',
-          flexDirection: 'row',
+          flexDirection: (I18nManager.isRTL ? 'row' : 'row-reverse'),
           alignItems: 'center',
         }}>
           {
