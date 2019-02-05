@@ -128,7 +128,7 @@ class SmoothPinCodeInput extends Component {
       ]}>
         <View style={{
           position: 'absolute', margin: 0, height: '100%',
-          flexDirection: (I18nManager.isRTL ? 'row' : 'row-reverse'),
+          flexDirection: (I18nManager.isRTL ? 'row-reverse' : 'row'),
           alignItems: 'center',
         }}>
           {
